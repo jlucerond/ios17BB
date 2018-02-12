@@ -8,20 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		D8F8B18C203206510087596F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F8B18B203206510087596F /* AppDelegate.swift */; };
-		D8F8B18E203206510087596F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8F8B18D203206510087596F /* ViewController.swift */; };
 		D8F8B191203206510087596F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F8B18F203206510087596F /* Main.storyboard */; };
 		D8F8B193203206510087596F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D8F8B192203206510087596F /* Assets.xcassets */; };
 		D8F8B196203206510087596F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D8F8B194203206510087596F /* LaunchScreen.storyboard */; };
+		D8F8B1A0203207960087596F /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8F8B19F203207960087596F /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D8F8B188203206510087596F /* ios17BB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios17BB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8F8B18B203206510087596F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D8F8B18D203206510087596F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D8F8B190203206510087596F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D8F8B192203206510087596F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D8F8B195203206510087596F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D8F8B197203206510087596F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D8F8B19D203207860087596F /* ios17BB.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ios17BB.entitlements; sourceTree = "<group>"; };
+		D8F8B19F203207960087596F /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8F8B1A0203207960087596F /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +42,7 @@
 			children = (
 				D8F8B18A203206510087596F /* ios17BB */,
 				D8F8B189203206510087596F /* Products */,
+				D8F8B19E203207960087596F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +57,30 @@
 		D8F8B18A203206510087596F /* ios17BB */ = {
 			isa = PBXGroup;
 			children = (
+				D8F8B19D203207860087596F /* ios17BB.entitlements */,
 				D8F8B18B203206510087596F /* AppDelegate.swift */,
-				D8F8B18D203206510087596F /* ViewController.swift */,
 				D8F8B18F203206510087596F /* Main.storyboard */,
+				D8F8B1A120320C430087596F /* Resources */,
+			);
+			path = ios17BB;
+			sourceTree = "<group>";
+		};
+		D8F8B19E203207960087596F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D8F8B19F203207960087596F /* CloudKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D8F8B1A120320C430087596F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
 				D8F8B192203206510087596F /* Assets.xcassets */,
 				D8F8B194203206510087596F /* LaunchScreen.storyboard */,
 				D8F8B197203206510087596F /* Info.plist */,
 			);
-			path = ios17BB;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -97,6 +116,14 @@
 					D8F8B187203206510087596F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -136,7 +163,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8F8B18E203206510087596F /* ViewController.swift in Sources */,
 				D8F8B18C203206510087596F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -274,9 +300,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ios17BB/ios17BB.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53BVAZ8K9G;
-				INFOPLIST_FILE = ios17BB/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ios17BB/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.UNUSED.iOSDevelopr.ios17BulletinBoard.ios17BB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -289,9 +316,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = ios17BB/ios17BB.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 53BVAZ8K9G;
-				INFOPLIST_FILE = ios17BB/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/ios17BB/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.UNUSED.iOSDevelopr.ios17BulletinBoard.ios17BB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
